@@ -71,7 +71,7 @@ public class MethodsExercise {
     }
 
     public static int diceSides(int userInput) {
-        int diceRoll = (int) (Math.random() * userInput);
+        int diceRoll = 1 + (int) (Math.random() * userInput - 1) + 1;
         return (diceRoll);
     }
 }
