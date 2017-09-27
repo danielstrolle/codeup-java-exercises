@@ -38,6 +38,7 @@ public class Person {
 
     public String getName() {
         return this.name;
+        // CAN DO "return name;" AS WELL. NAME IS UNAMBIGUOUS, SO WE CAN DO THIS
     }
 
     public void setName(String name) {
