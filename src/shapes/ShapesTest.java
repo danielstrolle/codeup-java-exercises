@@ -13,5 +13,6 @@ public class ShapesTest {
 //        Rectangle box2 = new Square(5);
         System.out.println(mySquare.getPerimeter());
         System.out.println(mySquare.getArea());
+
     }
 }
