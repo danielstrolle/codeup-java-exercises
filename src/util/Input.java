@@ -9,11 +9,13 @@ public class Input {
         scanner = new Scanner(System.in);
     }
 
-    public String getString() {
+    public String getString(String prompt) {
+        System.out.println(prompt);
         return this.scanner.nextLine();
     }
 
-    public boolean yesNo() {
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
         String userInput = scanner.nextLine();
         return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
     }
@@ -50,6 +52,17 @@ public class Input {
 //    }
 
     // USING EITHER DO WHILE OR RECURSION ACCOMPLISHES THE SAME FUNCTIONALITY, JUST USE WHICHEVER IS MORE CLEAR IN THE CURRENT SITUATION/TO THE PROBLEM
+
+    public String thisOrThat (String key, String value) {
+        System.out.println("Enter a " + key + " or " + value);
+        String userInput = scanner.nextLine();
+        if (userInput.equalsIgnoreCase(key) || userInput.equalsIgnoreCase(value)) {
+            return userInput;
+        } else {
+            System.out.println("Invalid Input");
+            return thisOrThat(key, value);
+        }
+    }
 
     public double getDouble() {
         System.out.println("Please enter a number: ");

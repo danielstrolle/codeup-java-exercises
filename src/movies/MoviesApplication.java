@@ -82,10 +82,8 @@ public class MoviesApplication {
 
     public static void addMovie() {
         Input input = new Input();
-        System.out.println("Enter the name of the movie");
-        String newMovieName = input.getString();
-        System.out.println("Enter the category of the movie");
-        String newMovieCategory = input.getString();
+        String newMovieName = input.getString("Enter the name of the movie");
+        String newMovieCategory = input.getString("Enter the category of the movie");
         Movie newMovie = new Movie(newMovieName, newMovieCategory);
         int newArrayLength = (movies.length + 1);
         System.out.println(newArrayLength);
