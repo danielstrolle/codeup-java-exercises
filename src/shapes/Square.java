@@ -21,12 +21,14 @@ public class Square extends Quadralateral {
 
     @Override
     public double getPerimeter() {
-        return (4 * super.getLength());
+            return this.length * 4;
+//        return (4 * super.getLength());  WORKS THE SAME AS THIS.LENGTH, HOWEVER MORE INDIRECT, PROBABLY ONLY NEED IF LENGTH IS PRIVATE...WE CAN ACCESS LENGTH SINCE ITS PROTECTED IN QUAD AND SQUARE EXTENDS QUAD
     }
 
     @Override
     public double getArea() {
-        return (super.getLength() * super.getWidth());
+        return this.length * this.width;
+//        return (super.getLength() * super.getWidth());
     }
 
 //    public Square (int sides) {
