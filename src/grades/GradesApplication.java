@@ -1,3 +1,7 @@
+package grades;
+
+import grades.Student;
+
 import java.util.*;
 
 public class GradesApplication {
