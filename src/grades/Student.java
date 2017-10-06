@@ -1,3 +1,5 @@
+package grades;
+
 import util.Input;
 
 import java.util.ArrayList;

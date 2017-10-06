@@ -22,7 +22,7 @@ public class Input {
 
     public int getInt(int min, int max) {
         System.out.println("Please enter a number between " + min + " & " + max);
-        int userInput = scanner.nextInt();
+        int userInput = getInt();
         if ((userInput > max) || (userInput < min)) {
             System.out.println("Please enter a valid number!");
             scanner.nextLine();
@@ -33,10 +33,13 @@ public class Input {
     }
 
     public int getInt() {
-        System.out.println("Please enter a number: ");
-        int userInput = scanner.nextInt();
-        scanner.nextLine();
-        return userInput;
+        String userInput = getString("Please enter an Integer: ");
+        try {
+            return Integer.valueOf(userInput);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter a valid integer");
+            return getInt();
+        }
     }
 
 //    public int getInt(int min, int max) {
@@ -65,15 +68,19 @@ public class Input {
     }
 
     public double getDouble() {
-        System.out.println("Please enter a number: ");
-        double userInput = scanner.nextDouble();
-        scanner.nextLine();
-         return userInput;
+        String userInput = getString("Please enter a number: ");
+        try {
+            return Double.valueOf(userInput);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter a valid number!");
+            return getDouble();
+        }
+
     }
 
     public double getDouble(double min, double max) {
         System.out.println("Please enter a number between " + min + " & " + max);
-        double userInput = scanner.nextDouble();
+        double userInput = getDouble();
         if ((userInput > max) || (userInput < min)) {
             System.out.println("Please enter a valid number!");
             scanner.nextLine();
@@ -81,6 +88,34 @@ public class Input {
         }
         scanner.nextLine();
         return userInput;
+    }
+
+    public int getBinary () {
+        String userInput = getString("Enter a Binary Number: ");
+        try {
+        return Integer.valueOf(userInput, 2);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter a valid Binary number!");
+            return getBinary();
+        }
+    }
+
+    public int getHex () {
+        String userInput = getString("Enter a Hexidecimal number: ");
+        try {
+            return Integer.valueOf(userInput, 16);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter a valid Hexadecimal number!");
+            return getHex();
+        }
+    }
+
+    public static void main(String[] args) {
+        Input input = new Input();
+        int user = input.getBinary();
+        System.out.println("Your number converted is: " + user);
+        int user2 = input.getHex();
+        System.out.println("Your number converted is: " + user2);
     }
 }
 
